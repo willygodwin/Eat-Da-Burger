@@ -1,13 +1,12 @@
 const connection = require('./connection')
 
  function selectAll(tableInput) {
-    const queryString = `SELECT * FROM ?;`
+    const queryString = `SELECT * FROM ${tableInput};`
     return new Promise((resolve, reject) => {
                 
   
         connection.query(
             queryString,
-            [tableInput],
             (err, res) => {
                 if (err) {
                     reject(err);
@@ -22,14 +21,16 @@ const connection = require('./connection')
  }
 
 
+
+
 function insertOne(tableInput, burgerName) {
-    const queryString = `INSERT INTO ?(name, devoured) VALUES(?, false);`
+    const queryString = `INSERT INTO ${tableInput}(name, devoured) VALUES(?, false);`
     return new Promise((resolve, reject) => {
                 
   
         connection.query(
             queryString,
-            [tableInput, burgerName],
+            [burgerName],
             (err, res) => {
                 if (err) {
                     reject(err);
@@ -44,9 +45,9 @@ function insertOne(tableInput, burgerName) {
 
 }
 
-function updateOne(burgerID) {
+function updateOne(tableInput,burgerID) {
 
-    const queryString = `UPDATE burgers  
+    const queryString = `UPDATE ${tableInput}  
     SET devoured = true
     WHERE id = ?;`
     return new Promise((resolve, reject) => {

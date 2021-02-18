@@ -11,10 +11,12 @@ const burger = {
     },
   
     updateOne(burgerID) {
-      orm.updateOne(burgerID);
+      orm.updateOne('burgers',burgerID);
     },
   };
   
   // Export the database functions for the controller (catsController.js).
   module.exports = burger;
+
+ 
   

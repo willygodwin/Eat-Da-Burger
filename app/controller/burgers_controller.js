@@ -1,17 +1,22 @@
 const express = require('express');
 const burger = require('../model/burger');
+const orm = require('../config/orm');
 
 const router = express.Router();
 
+burger.selectAll();
 
 // Create all our routes and set up logic within those routes where required.
-router.get('/', async (req, res) => {
-    const data = await burger.selectAll();
+router.get('/', (req, res) => {
+    console.log(burger.selectAll())
+    orm.selectAll('burgers').then(data =>{
+    console.log(data)
     const hbsObject = {
       burgers: data,
     };
     console.log('hbsObject', hbsObject);
     res.render('index', hbsObject);
+    });
   });
 
 router.post('/api/burgers', (req, res) => {
