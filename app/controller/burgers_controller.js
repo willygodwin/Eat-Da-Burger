@@ -5,15 +5,14 @@ const router = express.Router();
 
 
 // Create all our routes and set up logic within those routes where required.
-router.get('/', (req, res) => {
-//     burger.all((data) => {
-//     const hbsObject = {
-//       cats: data,
-//     };
-//     console.log('hbsObject', hbsObject);
-//     res.render('index', hbsObject);
-//   });
-});
+router.get('/', async (req, res) => {
+    const data = await burger.selectAll();
+    const hbsObject = {
+      burgers: data,
+    };
+    console.log('hbsObject', hbsObject);
+    res.render('index', hbsObject);
+  });
 
 router.post('/api/burgers', (req, res) => {
 //   burger.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
