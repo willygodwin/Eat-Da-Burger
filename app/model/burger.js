@@ -3,15 +3,16 @@ const orm = require('../config/orm');
 
 const burger = {
     selectAll() {
-      orm.selectAll('burgers');
+      return orm.selectAll('burgers');
+      
     },
     // The variables cols and vals are arrays.
     insertOne(burgerName) {
-      orm.insertOne('burgers', burgerName);
+      return orm.insertOne('burgers', burgerName);
     },
   
     updateOne(burgerID) {
-      orm.updateOne('burgers',burgerID);
+      return orm.updateOne('burgers',burgerID);
     },
   };
   

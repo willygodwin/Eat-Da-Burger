@@ -10,6 +10,7 @@ const connection = require('./connection')
             (err, res) => {
                 if (err) {
                     reject(err);
+                    return;
                 }
                 
             // roleNames = res.map(role => {

@@ -12,7 +12,7 @@ if (createBurgerBtn) {
 
     // Grabs the value of the textarea that goes by the name, "quote"
     const newBurger = {
-      name: document.getElementById('ca').value.trim(),
+      name: document.getElementById('burger').value.trim(),
       devoured: false,
     };
 
