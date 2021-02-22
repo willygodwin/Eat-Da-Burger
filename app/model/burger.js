@@ -11,8 +11,8 @@ const burger = {
       return orm.insertOne('burgers', burgerName);
     },
   
-    updateOne(burgerID) {
-      return orm.updateOne('burgers',burgerID);
+    updateOne(burgerID, newDevoured) {
+      return orm.updateOne('burgers', burgerID, newDevoured);
     },
   };
   

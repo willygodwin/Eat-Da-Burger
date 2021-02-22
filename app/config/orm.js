@@ -46,11 +46,17 @@ function insertOne(tableInput, burgerName) {
 
 }
 
-function updateOne(tableInput,burgerID) {
-
-    const queryString = `UPDATE ${tableInput}  
-    SET devoured = true
-    WHERE id = ?;`
+function updateOne(tableInput,burgerID, newDevoured) {
+    let queryString = ''
+    if(newDevoured){
+        queryString = `UPDATE ${tableInput}  
+        SET devoured = true
+        WHERE id = ?;`
+    } else{
+        queryString = `UPDATE ${tableInput}  
+        SET devoured = false
+        WHERE id = ?;`
+    }
     return new Promise((resolve, reject) => {
                 
   
