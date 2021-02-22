@@ -1,0 +1,37 @@
+h1 { 
+    text-align: center;
+}
+
+.burger-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.not-devoured{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+} 
+
+.devoured{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h2 {
+    text-align: center;
+}
+#create-form {
+    text-align: center;
+}
+
+img{
+    border-radius: 50%;
+}

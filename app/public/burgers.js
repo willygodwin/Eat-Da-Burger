@@ -17,6 +17,8 @@ if (changeDevourBtns) {
     const id = e.target.getAttribute('data-id');
     const newDevoured = e.target.getAttribute('data-newDevoured');
 
+    console.log(id)
+
     const newDevouredState = {
         devoured: newDevoured,
     };
@@ -35,10 +37,12 @@ if (changeDevourBtns) {
         // Reload the page so the user can see the new quote
         if (response.ok) {
         console.log(`changed devoured to: ${newDevoured}`);
-        location.reload('/');
+        // location.reload('/');
         } else {
         alert('something went wrong!');
         }
+    }).catch(err => {
+        console.log(err)
     });
     });
 });

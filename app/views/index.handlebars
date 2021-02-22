@@ -1,24 +1,33 @@
 	<h1>Eat-Da-Burger!</h1>
 
-<h2>Not devoured</h2>
+    <img src="img/burgers.jfif" alt="burger image">
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgersList devour=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
+<div class="burger-list">
+    <div class="not-devoured">
+        <h2>Not devoured</h2>
 
-<h2>Devoured</h2>
+        <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgersList devour=true}}
+        {{/unless}}
+        {{/each}}
+        </ul>
+    </div>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{> burgersList devour=false}}
-  {{/if}}
-  {{/each}}
-</ul>
+
+    <div class="devoured">
+        <h2>Devoured</h2>
+
+        <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgersList devour=false}}
+        {{/if}}
+        {{/each}}
+        </ul>
+    </div>
+</div>
 
 <h2>Add a burger</h2>
 <form id="create-form">
