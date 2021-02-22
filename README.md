@@ -19,13 +19,10 @@ Visit the deployed URL " https://eat-da-burger69.herokuapp.com/"
 
 
 ## Usage Information 
-Click 'Get Started' button to begin using the application. 
+Add burgers in the input box and the bottom, delete burgers with the 'X' and choose to devour or throw up yours burgers. 
 
 ![Alt text](/app/public/img/home.JPG?raw=true "home") 
 
-Click to pencil in the top right hand corner to add a new note. Enter in the contents of the title and the contents of the body, then click the save button to add the note. To delte notes click the trashcan button beside each note. 
-
-![Alt text](/screenshots/notes.JPG?raw=true "notes") 
 
 
 ## License
