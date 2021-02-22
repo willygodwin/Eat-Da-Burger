@@ -21,7 +21,7 @@ Visit the deployed URL " https://eat-da-burger69.herokuapp.com/"
 ## Usage Information 
 Click 'Get Started' button to begin using the application. 
 
-![Alt text](/screenshots/home.JPG?raw=true "home") 
+![Alt text](/app/public/img/home.JPG?raw=true "home") 
 
 Click to pencil in the top right hand corner to add a new note. Enter in the contents of the title and the contents of the body, then click the save button to add the note. To delte notes click the trashcan button beside each note. 
 
