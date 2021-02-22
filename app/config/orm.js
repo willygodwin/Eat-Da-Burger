@@ -1,3 +1,4 @@
+const burger = require('../model/burger');
 const connection = require('./connection')
 
  function selectAll(tableInput) {
@@ -77,12 +78,37 @@ function updateOne(tableInput,burgerID, newDevoured) {
 
 }
 
+function deleteOne(tableInput,burgerID){
+    const queryString = `DELETE FROM ${tableInput} WHERE id = ?`
+    return new Promise((resolve, reject) => {
+                
+  
+        connection.query(
+            queryString,
+            [burgerID],
+            (err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                
+            // roleNames = res.map(role => {
+            //     return {name: role.title, value: role.id }});
+            console.log(`Succesfully deleted the burger ${burgerID}, info below ${res}`);
+            resolve(res)
+        });      
+    });
+
+}
+
+
+
 
 
 const orm = {
     selectAll,
     insertOne,
     updateOne, 
+    deleteOne
 
 }
 

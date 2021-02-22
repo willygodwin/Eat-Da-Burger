@@ -53,5 +53,17 @@ router.put('/api/burgers/:id', (req, res) => {
 
 });
 
+router.delete('/api/burgers/:id', (req, res) => {
+    const id = req.params.id;
+
+    burger.deleteOne(id).then((result) => {
+       
+        res.status(200).end();
+    }).catch(err => {
+        res.status(400).json({error: err})
+    })
+
+});
+
 // Export routes for server.js to use.
 module.exports = router;

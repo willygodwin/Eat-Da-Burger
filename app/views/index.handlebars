@@ -5,6 +5,7 @@
 <div class="burger-list">
     <div class="not-devoured">
         <h2>Not devoured</h2>
+        <hr>
 
         <ul>
         {{#each burgers}}
@@ -18,6 +19,7 @@
 
     <div class="devoured">
         <h2>Devoured</h2>
+        <hr>
 
         <ul>
         {{#each burgers}}
@@ -37,5 +39,5 @@
     <input type="text" id="burger" name="name">
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button class="burger-button submit-button devour-burger" type="submit">Add Burger</button>
 </form>

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 // UPDATE
-const changeDevourBtns = document.querySelectorAll('.devour-burger');
+const changeDevourBtns = document.querySelectorAll('.change-state-button');
 
 // Set up the event listener for the create button
 if (changeDevourBtns) {
@@ -37,7 +37,7 @@ if (changeDevourBtns) {
         // Reload the page so the user can see the new quote
         if (response.ok) {
         console.log(`changed devoured to: ${newDevoured}`);
-        // location.reload('/');
+        location.reload('/');
         } else {
         alert('something went wrong!');
         }
@@ -71,13 +71,54 @@ if (createBurgerBtn) {
       // Make sure to serialize the JSON body
       body: JSON.stringify(newBurger),
     }).then(() => {
+      
       // Empty the form
       document.getElementById('burger').value = '';
 
       // Reload the page so the user can see the new quote
       console.log('Created a new burger!');
-    //   location.reload();
+      location.reload();
     });
   });
 }
 });
+
+// UPDATE
+const deleteBurgerBtns = document.querySelectorAll('.delete-burger');
+
+// Set up the event listener for the create button
+if (deleteBurgerBtns) {
+    deleteBurgerBtns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+    console.log('test');
+    // Grabs the id of the element that goes by the name, "id"
+    const id = e.target.getAttribute('data-id');
+
+    console.log(id)
+
+
+
+    fetch(`/api/burgers/${id}`, {
+        method: 'DELETE',
+        headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        },
+
+        // make sure to serialize the JSON body
+        body: JSON.stringify(),
+    }).then((response) => {
+        // Check that the response is all good
+        // Reload the page so the user can see the new quote
+        if (response.ok) {
+        console.log(`Deleted burger ${id}`);
+        location.reload('/');
+        } else {
+        alert('something went wrong!');
+        }
+    }).catch(err => {
+        console.log(err)
+    });
+    });
+});
+}    

@@ -14,6 +14,10 @@ const burger = {
     updateOne(burgerID, newDevoured) {
       return orm.updateOne('burgers', burgerID, newDevoured);
     },
+
+    deleteOne(burgerID){
+      return orm.deleteOne('burgers', burgerID);
+    }
   };
   
   // Export the database functions for the controller (catsController.js).
